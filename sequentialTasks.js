@@ -22,6 +22,9 @@ if(require.main === module) {
     const delay = ms => new Promise(r => setTimeout(r,ms));
 
     const tasks =[
-        async () => await delay(400); console.log("task1"); return 10;},
+        async () => {await delay(400); console.log("task1"); return 10;},
+        async () => {await delay(400); console.log("task1"); return 10;},
+        async () => { throw new Error("task 4 failed");}
     ];
+    console.log("starting sequential run \n");
 }
